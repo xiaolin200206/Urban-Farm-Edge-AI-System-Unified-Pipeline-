@@ -1,4 +1,5 @@
 A robust, commercial-grade Edge AI platform designed for real-time agricultural disease and pest monitoring. Supports seamless switching between Image Classification (e.g., MobileNet for micro-pests) and Object Detection (e.g., YOLOv8 for fungal spots) on edge devices (Raspberry Pi 5 / NVIDIA Jetson), with built-in Enterprise SaaS capabilities.
+
 🔄 The Complete AI Lifecycle
 
 To bridge the domain gap between controlled greenhouse environments and dynamic edge deployments, this system is governed by two distinct pipelines:
@@ -41,17 +42,19 @@ Unified Dockerfile supporting OpenCV (Camera/Video) and ONNX Runtime.
 
 Headless execution with volume mapping for local telemetry logs (/app/logs).
 
+
 🚀 Enterprise SaaS Roadmap (The Data Flywheel)
 
 Note for Deployment: The following modules are designed for B2B commercialization and subscription-based deployment.
 
-    Phase 1: Edge Security & DRM (Hardware ID Binding) Strictly binds ONNX model decryption and script execution to the specific Raspberry Pi MAC address + CPU Serial Number, preventing unauthorized SD card cloning.
+Phase 1: Edge Security & DRM (Hardware ID Binding) Strictly binds ONNX model decryption and script execution to the specific Raspberry Pi MAC address + CPU Serial Number, preventing unauthorized SD card cloning.
 
-    Phase 2: Cloud Telemetry (Real-time Sync) Edge devices push live metrics (CPU%, Temp, Uptime, Inference FPS) to a centralized Cloud Dashboard via MQTT/WebSockets.
+Phase 2: Cloud Telemetry (Real-time Sync) Edge devices push live metrics (CPU%, Temp, Uptime, Inference FPS) to a centralized Cloud Dashboard via MQTT/WebSockets.
 
-    Phase 3: Active Learning & Smart Hard-Mining If model confidence is ambiguous (e.g., 0.40 - 0.70), the edge device auto-saves the high-res patch. These edge cases are pushed to AWS S3 during network idle time for Human-in-the-loop (HITL) re-labeling and CI/CD model OTA updates.
+Phase 3: Active Learning & Smart Hard-Mining If model confidence is ambiguous (e.g., 0.40 - 0.70), the edge device auto-saves the high-res patch. These edge cases are pushed to AWS S3 during network idle time for Human-in-the-loop (HITL) re-labeling and CI/CD model OTA updates.
 
 📂 Project Structure
+
 Plaintext
 
 edge_ai_core/
@@ -101,12 +104,12 @@ pip install -r requirements.txt
 Bash
 
 docker run -it --rm \
-    --device /dev/video0 \
-    -e DISPLAY=$DISPLAY \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v $(pwd)/farm_logs:/app/logs \
-    --name farm-edge-container \
-    farm-ai-core
+--device /dev/video0 \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v $(pwd)/farm_logs:/app/logs \
+--name farm-edge-container \
+ farm-ai-core
 
 ⚠️ Known Limitations
 
