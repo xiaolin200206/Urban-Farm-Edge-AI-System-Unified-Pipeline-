@@ -88,7 +88,7 @@ This edge architecture is highly modular. Depending on your specific agricultura
 *Optimized for localized bounding-box detection (e.g., Durian fungal spots).*
 ```bash
 # 1. Clone the dedicated detection repository
-git clone [https://github.com/xiaolin200206/Edge-Disease-Inference-Engine.git](https://github.com/xiaolin200206/Edge-Disease-Inference-Engine.git)
+git clone [https://github.com/xiaolin200206/Edge-Disease-Inference-Engine.git](https://github.com/xiaolin200206/Edge-Disease-Inference-Engine.py.git)
 cd Edge-Disease-Inference-Engine
 
 # 2. Run the detection inference engine
@@ -98,7 +98,7 @@ python3 "edge code"
 **🎯 Option B: Image Classification Engine (MobileNet + Patch Crop)**
 Optimized for global leaf assessment and extreme micro-pest (e.g., Mites) classification.
 # 1. Clone the unified classification repository
-git clone [https://github.com/xiaolin200206/unified-agtech-engine.git](https://github.com/xiaolin200206/unified-agtech-engine.git)
+git clone [https://github.com/xiaolin200206/unified-agtech-engine.git](https://github.com/xiaolin200206/unified-agtech-engine.py.git)
 cd unified-agtech-engine
 
 # 2. Run the classification inference engine
